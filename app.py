@@ -13,8 +13,7 @@ API_KEY  = os.environ.get('UNIPASS_API_KEY', '')
 PASSWORD = os.environ.get('APP_PASSWORD', 'unipass1234')
 API_BASE = 'https://unipass.customs.go.kr:38010/ext/rest/cargCsclPrgsInfoQry/retrieveCargCsclPrgsInfo'
 
-import certifi
-SSL_CTX = ssl.create_default_context(cafile=certifi.where())
+SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
 SSL_CTX.verify_mode = ssl.CERT_NONE
 
