@@ -11,7 +11,7 @@ app.secret_key = os.environ.get('SECRET_KEY', 'unipass-secret-2026')
 
 API_KEY  = os.environ.get('UNIPASS_API_KEY', '')
 PASSWORD = os.environ.get('APP_PASSWORD', 'unipass1234')
-API_BASE = 'http://unipass.customs.go.kr:38010/ext/rest/cargCsclPrgsInfoQry/retrieveCargCsclPrgsInfo'
+API_BASE = 'https://unipass.customs.go.kr:38010/ext/rest/cargCsclPrgsInfoQry/retrieveCargCsclPrgsInfo'
 
 SSL_CTX = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
 SSL_CTX.check_hostname = False
