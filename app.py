@@ -77,7 +77,12 @@ def api_search():
 def fetch_xml(params):
     query = '&'.join(k + '=' + urllib.parse.quote(str(v)) for k, v in params.items())
     url   = API_BASE + '?' + query
-    req   = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    req   = urllib.request.Request(url, headers={
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Accept': 'text/xml,application/xml,*/*',
+        'Accept-Language': 'ko-KR,ko;q=0.9',
+        'Connection': 'keep-alive'
+    })
     with urllib.request.urlopen(req, timeout=30, context=SSL_CTX) as res:
         return res.read().decode('utf-8')
 
